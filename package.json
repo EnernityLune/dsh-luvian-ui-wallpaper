@@ -6,11 +6,11 @@
   "author": "EnernityLune",
   "repository": {
     "type": "git",
-    "url": "https://github.com/EnernityLune/deepseek-harness-luvian-ui-wallpaper.git"
+    "url": "https://github.com/EnernityLune/dsh-luvian-ui-wallpaper.git"
   },
-  "homepage": "https://github.com/EnernityLune/deepseek-harness-luvian-ui-wallpaper#readme",
+  "homepage": "https://github.com/EnernityLune/dsh-luvian-ui-wallpaper#readme",
   "bugs": {
-    "url": "https://github.com/EnernityLune/deepseek-harness-luvian-ui-wallpaper/issues"
+    "url": "https://github.com/EnernityLune/dsh-luvian-ui-wallpaper/issues"
   },
   "keywords": [
     "dsh-plugin",
