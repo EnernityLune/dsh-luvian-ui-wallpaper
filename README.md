@@ -18,7 +18,7 @@ DeepSeek Harness Web UI 的客户端皮肤插件（品牌：弗糯糯 / nuonuo�
 
 ```sh
 # 方式一：从 GitHub 直接装（推荐，始终拿到最新源码）
-dsh plugin --profile web add "github:EnernityLune/deepseek-harness-luvian-ui-wallpaper#main"
+dsh plugin --profile web add "github:EnernityLune/dsh-luvian-ui-wallpaper#main"
 
 # 方式二：从 npm 装（需先 npm publish）
 dsh plugin --profile web add @luvian/dsh-ui-wallpaper
@@ -49,6 +49,28 @@ pnpm bundle
 ```
 
 构建产物在 `lib/client.js`，由 `cordis.patch.yml`（id `luvian-wallpaper`）随 Harness 启动自动加载。运行时控制台会打印 `🔥 Luvian theme loaded, nuonuo`。
+
+## 发布（作者）
+
+本插件**刻意不带私人素材**，发布出去的是 no-asset 骨架版。发布前务必确认 `lib/` 是 no-asset 构建（包体积应 < 1MB，而非内联素材后的几十 MB）。
+
+```sh
+# 1. 临时移走本地私人素材配置，确保走占位/空视频
+mv theme.config.local.json theme.config.local.json.bak
+# 2. 重新构建（生成 no-asset 的 lib/）
+pnpm bundle
+# 3. 登录 npm（首次需先 npm adduser / npm login）
+npm login
+# 4. 发布（dry-run 先确认体积，再真发）
+npm publish --dry-run
+npm publish
+# 5. 发布完恢复本地素材配置，开发照旧
+mv theme.config.local.json.bak theme.config.local.json
+```
+
+> ⚠️ 千万不要在 `theme.config.local.json` 存在的情况下直接 `npm publish`——那样私人壁纸/图标会被内联进 `lib/` 一起发出去。`.npmignore` 已屏蔽 `src/client/assets/`，但 `lib/` 里的内联素材不受其管控，所以第 1 步的移走动作是关键保险。
+>
+> GitHub 仓库（带 `dsh-plugin` topic）已是 dsh 社区的主要分发方式；npm 为可选二级分发。
 
 ## 素材降级
 
