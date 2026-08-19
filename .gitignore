@@ -1,0 +1,19 @@
+# 依赖
+node_modules/
+
+# 构建产物（由 pnpm bundle 生成，体积大，勿提交）
+lib/
+
+# 自动生成的素材接入文件（由 scripts/build-theme.mjs 生成）
+src/client/theme/generated.ts
+
+# 日志
+*.log
+
+# 私人主题素材（不随仓库分发，用户自行提供自己的壁纸/图标）
+src/client/assets/*.png
+src/client/assets/*.jpg
+src/client/assets/*.mp4
+src/client/assets/*.webm
+# 保留降级占位（1×1 透明像素，用于素材缺失兜底，需进仓库）
+!src/client/assets/defaults/placeholder.png

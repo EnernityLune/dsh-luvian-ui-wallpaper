@@ -1,0 +1,16 @@
+{
+  "comment": "换图换视频只改本文件，不需要改 TypeScript。素材路径相对于插件包根目录（即本文件所在目录）。缺少某素材时构建不会失败，会自动用占位图兜底；视频缺失则不挂视频壁纸。改完运行 pnpm bundle 重新生成。",
+  "assets": {
+    "inputCard": "src/client/assets/InputCard.png",
+    "sideBar": "src/client/assets/sideBar.jpg",
+    "wallpaper": "src/client/assets/wallpaper.mp4",
+    "brandLogo": "src/client/assets/弗糯糯.png",
+    "collapseIcon": "src/client/assets/收起按钮_蓝紫音符_透明底稿.png",
+    "searchIcon": "src/client/assets/搜索按钮_红紫音符_透明底稿.png",
+    "newSessionIcon": "src/client/assets/新对话_彩色琴谱_高清透明.png",
+    "addWorkspaceIcon": "src/client/assets/添加工作区_木色小提琴_高清透明.png",
+    "settingsIcon": "src/client/assets/设置_红色彼岸花_16@2x.png",
+    "settingsRailIcon": "src/client/assets/设置_红色彼岸花_18@2x.png",
+    "filterIcon": "src/client/assets/筛选_蓝色水滴宝石_高清透明.png"
+  }
+}

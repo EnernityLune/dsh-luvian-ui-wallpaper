@@ -1,0 +1,71 @@
+{
+  "name": "@luvian/dsh-ui-wallpaper",
+  "version": "0.0.1",
+  "type": "module",
+  "license": "MIT",
+  "author": "EnernityLune",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EnernityLune/deepseek-harness-luvian-ui-wallpaper.git"
+  },
+  "homepage": "https://github.com/EnernityLune/deepseek-harness-luvian-ui-wallpaper#readme",
+  "bugs": {
+    "url": "https://github.com/EnernityLune/deepseek-harness-luvian-ui-wallpaper/issues"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "ui-theme",
+    "wallpaper",
+    "theme"
+  ],
+  "files": [
+    "lib",
+    "src",
+    "theme.config.json",
+    "scripts",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+ "exports": {
+  ".": {
+    "types": "./lib/types/index.d.ts",
+    "default": "./lib/index.js"
+  },
+  "./client": {
+    "types": "./lib/types/client/index.d.ts",
+    "default": "./lib/client.js"
+  },
+  "./package.json": "./package.json"
+},
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-theme"
+      ],
+      
+      "platform": "web"
+
+    }
+  },
+  "scripts": {
+    "bundle": "node scripts/build-theme.mjs && tsc -b && tsdown",
+    "assets:check": "node scripts/build-theme.mjs --check",
+    "watch": "tsdown --watch"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-client-runtime": "0.1.0-rc.5",
+    "@deepseek-ai/dsh-client-ui-theme": "0.1.0-rc.5"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-client-runtime": "0.1.0-rc.5",
+    "@deepseek-ai/dsh-client-ui-theme": "0.1.0-rc.5"
+  }
+}
