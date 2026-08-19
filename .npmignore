@@ -1,0 +1,6 @@
+# 私人主题素材（与 .gitignore 对应的 npm 层面排除，.gitignore 只管 git 不管 npm 打包）
+src/client/assets/
+# 本地开发用配置（含私人素材路径，不随包发布）
+theme.config.local.json
+# 构建中间产物（已由 lib/ 提供编译结果）
+src/client/theme/generated.ts

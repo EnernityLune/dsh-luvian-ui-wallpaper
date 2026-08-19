@@ -10,7 +10,10 @@ import { dirname, resolve, relative } from 'node:path'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const pkgRoot = resolve(__dirname, '..')
-const configPath = resolve(pkgRoot, 'theme.config.json')
+const localConfigPath = resolve(pkgRoot, 'theme.config.local.json')
+const configPath = existsSync(localConfigPath)
+  ? localConfigPath
+  : resolve(pkgRoot, 'theme.config.json')
 const generatedPath = resolve(pkgRoot, 'src/client/theme/generated.ts')
 const defaultsDir = resolve(pkgRoot, 'defaults')
 const themeDir = resolve(pkgRoot, 'src/client/theme')
@@ -43,7 +46,7 @@ const entries = ['export const assetUrls = {']
 
 for (const [key, rel] of Object.entries(assets)) {
   const abs = resolve(pkgRoot, rel)
-  if (existsSync(abs)) {
+  if (rel && existsSync(abs)) {
     imports.push(`import ${key} from '${toImportPath(abs)}'`)
     entries.push(`  ${key}: ${key},`)
   } else {

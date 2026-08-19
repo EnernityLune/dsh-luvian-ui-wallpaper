@@ -21,7 +21,6 @@
   ],
   "files": [
     "lib",
-    "src",
     "theme.config.json",
     "scripts",
     "cordis.patch.yml",

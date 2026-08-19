@@ -16,4 +16,7 @@ src/client/assets/*.jpg
 src/client/assets/*.mp4
 src/client/assets/*.webm
 # 保留降级占位（1×1 透明像素，用于素材缺失兜底，需进仓库）
-!src/client/assets/defaults/placeholder.png
+!defaults/placeholder.png
+
+# 本地开发用素材配置（含私人素材路径，不进仓库、不随发布泄露）
+theme.config.local.json
