@@ -4,6 +4,14 @@ DeepSeek Harness Web UI 的客户端皮肤插件（品牌：弗糯糯 / nuonuo�
 
 > 这是给《汐薯小馆》作者霄用的个人皮肤插件，由 GPT 初版、WorkBuddy（渡）重构硬化。
 
+## 预览
+
+> 截图里的壁纸/图标是作者个人审美（build 阶段用 `theme.config.local.json` 注入，作者私密），仓库里不带这些素材 —— 其他人装上后看到的会是骨架皮肤 + 占位，需要自己塞素材。
+
+| 主页（hero） | 聊天（active） |
+| :---: | :---: |
+| ![home](docs/screenshots/home.jpg) | ![chat](docs/screenshots/chat.jpg) |
+
 ## 兼容性
 
 - **目标 Harness 版本**：`0.1.0-rc.5`（本插件基于该版本源码的 DOM 契约与主题 API 实现）。
